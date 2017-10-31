@@ -44,4 +44,4 @@ Based on the IBM J9 Small Footprint Java Runtime Environment.
 Drop your `war` files into `${DEPLOYMENT_DIR}`.
 
 Start an instance with:
-`docker run -d -p `9080:9080 -p 9443:9443 --name openliberty portlands/openliberty`
+`docker run -d -p 9080:9080 -p 9443:9443 --name openliberty portlands/openliberty`
