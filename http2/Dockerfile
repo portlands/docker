@@ -6,6 +6,7 @@
 #
 
 FROM alpine:3.6
+LABEL maintainer="Tobias N. Sasse, @tnsasse" description="Portlands Nginx HTTP/2"
 
 ## Build nginx
 
