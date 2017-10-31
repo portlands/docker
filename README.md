@@ -12,9 +12,9 @@ If you want to connect to one of the containers, you need to import the self-sig
 
 The container certificate is valid for the following Subject Alternate Names (SAN):
 
-  * localhost
-  * *.docker.local
-  * 127.0.0.1 and ::1
+  * `localhost`
+  * `*.docker.local`
+  * `127.0.0.1` and `::1`
   
 So you can easily setup your own DNS or (`/etc/hosts`) records for inter-container
 communications via TLS.    
@@ -32,6 +32,7 @@ Push content to `${DEPLOYMENT_DIR}`.
 
 The SSL configuration is set rather restrictive, please have a look at the
 [server configuration](http2/conf/default.conf). Server headers are disabled.
+Requests to port 80 are forwarded to port 443.
 
 Start an instance with:
 `docker run -d -p 80:80 -p 443:443 --name http2 portlands/http2`
