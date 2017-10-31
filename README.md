@@ -1,7 +1,12 @@
 # Portlands Docker Collection
 This is a docker image collection, inspired by [AdamBien/docklands](https://github.com/AdamBien/docklands).
 It features Alpine Linux based images for Java, JavaScript and HTML5 developers. All portlands images are 
-configured with SSL capabilities, this is particularly important if you want to benefit from HTTP/2. 
+configured with SSL capabilities, this is particularly important if you want to benefit from HTTP/2.
+
+The images are meant to be extended by the developer. All images provide environment
+variables for deployment purposes.
+
+Ready made images can be pulled from [DockerHub](https://hub.docker.com/u/portlands/) .
 
 ## SSL
 
