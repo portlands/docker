@@ -1,5 +1,5 @@
 # Portlands Docker Collection
-This is a docker image collection, inspired by [AdamBien/docklands](https://github.com/AdamBien/docklands).
+This is a lean and pragmatic docker image collection, inspired by [AdamBien/docklands](https://github.com/AdamBien/docklands).
 It features Alpine Linux based images for Java, JavaScript and HTML5 developers. All portlands images are 
 configured with SSL capabilities, this is particularly important if you want to benefit from HTTP/2.
 
@@ -31,9 +31,11 @@ shouldn't be too hard to swap them out in the Dockerfiles.
 
 ## Images
 
-### http2
+### Nginx HTTP/2 (http2)
 Nginx web server with TLS, HTTP/2 and GZIP compression.
 Push content to `${DEPLOYMENT_DIR}`.
+
+Image size: 15.3 MB
 
 The SSL configuration is set rather restrictive, please have a look at the
 [server configuration](http2/conf/default.conf). Server headers are disabled.
@@ -42,11 +44,12 @@ Requests to port 80 are forwarded to port 443.
 Start an instance with:
 `docker run -d -p 80:80 -p 443:443 --name http2 portlands/http2`
 
-### openliberty
+### OpenLiberty MicroProfile (openliberty)
 OpenLiberty MicroProfile server with SSL, JPA and EJB enabled. 
-Based on the IBM J9 Small Footprint Java Runtime Environment.
-
+Based on the IBM J9 Small Footprint Java Runtime Environment. 
 Drop your `war` files into `${DEPLOYMENT_DIR}`.
+
+Image size: 198 MB
 
 Start an instance with:
 `docker run -d -p 9080:9080 -p 9443:9443 --name openliberty portlands/openliberty`
