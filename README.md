@@ -36,3 +36,12 @@ Requests to port 80 are forwarded to port 443.
 
 Start an instance with:
 `docker run -d -p 80:80 -p 443:443 --name http2 portlands/http2`
+
+### openliberty
+OpenLiberty MicroProfile server with SSL, JPA and EJB enabled. 
+Based on the IBM J9 Small Footprint Java Runtime Environment.
+
+Drop your `war files into `${DEPLOYMENT_DIR}`.
+
+Start an instance with:
+`docker run -d -p `9080:9080 -p 9443:9443 --name openliberty portlands/openliberty`

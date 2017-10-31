@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="OpenLiberty Server">
+
+    <!-- Enable features -->
+    <featureManager>
+        <feature>microProfile-1.2</feature>
+        <feature>jpa-2.1</feature>
+        <feature>ejbLite-3.2</feature>
+    </featureManager>
+
+    <!-- Default Keystore containing Portlands Certificates -->
+    <keyStore id="defaultKeyStore" location="/etc/key.jks" password="{xor}NjErMGpyPD48MnISNi06cmgPOi0sNj5yajM2KyswMQ==" />
+    <ltpa keysPassword="{xor}DCovchQ+OTQ+cm0bLTAwM3IzOj4tMWxyaBktJjo=" keysFileName="/etc/ltpa.keys" />
+
+    <!-- To allow access to this server from a remote client host="*" has been added to the following element -->
+    <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443" />
+
+    <!-- Automatically expand WAR files and EAR files -->
+    <applicationManager autoExpand="true"/>
+
+</server>
