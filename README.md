@@ -1,6 +1,6 @@
 # Portlands Docker Collection
 This is a docker image collection, inspired by [AdamBien/docklands](https://github.com/AdamBien/docklands).
-It features alpine linux based images for Java, JavaScript and HTML5 developers. All portlands images are 
+It features Alpine Linux based images for Java, JavaScript and HTML5 developers. All portlands images are 
 configured with SSL capabilities, this is particularly important if you want to benefit from HTTP/2. 
 
 ## SSL
@@ -20,17 +20,18 @@ So you can easily setup your own DNS or (`/etc/hosts`) records for inter-contain
 communications via TLS.    
 
 **Security advice:** The default embedded certificates should not be used in production.
-The root certificate is kept safe to the best of my abilities but should only be used
+The root certificate is kept safe to the best of my abilities, but should only be used
 for development and testing purposes. You should *bring your own certificates*, it 
 shouldn't be too hard to swap them out in the Dockerfiles.
 
 ## Images
 
 ### http2
-nginx on alpine linux with tls, http2 and gzip compression.
+Nginx web server with TLS, HTTP/2 and GZIP compression.
 Push content to `${DEPLOYMENT_DIR}`.
 
-The ssl certificate bundled is valid for localhost.
+The SSL configuration is set rather restrictive, please have a look at the
+[server configuration](http2/conf/default.conf). Server headers are disabled.
 
 Start an instance with:
 `docker run -d -p 80:80 -p 443:443 --name http2 portlands/http2`
