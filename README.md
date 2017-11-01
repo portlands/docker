@@ -29,6 +29,13 @@ The root certificate is kept safe to the best of my abilities, but should only b
 for development and testing purposes. You should *bring your own certificates*, it 
 shouldn't be too hard to swap them out in the Dockerfiles.
 
+To import the certificate to your local JAVA (e.g. for system tests) you can do so
+on Mac OS like this:
+
+`sudo keytool -import -trustcacerts -keystore /Library/Java/JavaVirtualMachines/<YOUR_JAVA_VERSION>/Contents/Home/jre/lib/security/cacerts -storepass changeit -noprompt -alias portlands -file <PATH_TO>/pki/ca.crt`
+
+Of course, substitute `<YOUR_JAVA_VERSION>` and `<PATH_TO>`. If you double click the `ca.crt` file on Mac OS you can import it with the Keychain Tool into your System Chain, which will make your browser to accept it.
+
 ## Images
 
 ### Nginx HTTP/2 (http2)
