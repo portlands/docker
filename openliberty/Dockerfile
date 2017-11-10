@@ -11,6 +11,9 @@ LABEL maintainer="Tobias N. Sasse, @tnsasse" description="Portlands OpenLiberty"
 ENV VERSION 17.0.0.3
 ENV SHA 528e393e0b240ebbedb91d25402e22297c6d56ec
 
+RUN apk update
+RUN apk upgrade
+
 RUN set -ex \
   && apk add --no-cache \
     ca-certificates \
