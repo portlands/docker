@@ -12,6 +12,9 @@ LABEL maintainer="Tobias N. Sasse, @tnsasse" description="Portlands Nginx HTTP/2
 
 ENV NGINX_VERSION 1.13.6
 
+RUN apk update
+RUN apk upgrade
+
 RUN set -ex \
   && apk add --no-cache \
     ca-certificates \
