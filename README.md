@@ -46,7 +46,8 @@ Image size: 15.3 MB
 
 The SSL configuration is set rather restrictive, please have a look at the
 [server configuration](http2/conf/default.conf). Server headers are disabled.
-Requests to port 80 are forwarded to port 443.
+
+Requests to port 80 are forwarded to port 443. If you do not want to have automatic redirects to 443, please use the `http2-noredirect` image which provides plain HTTP via port 80.
 
 Start an instance with:
 `docker run -d -p 80:80 -p 443:443 --name http2 portlands/http2`
